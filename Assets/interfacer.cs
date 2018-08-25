@@ -32,7 +32,7 @@ public class interfacer : MonoBehaviour
     }
     public void sendActive()
     {
-        Debug.Log("sent");
+        // Debug.Log("sent");
         gameObject.SendMessage("Activate");
     }
     private void HandHoverUpdate(Hand hand)
@@ -41,6 +41,11 @@ public class interfacer : MonoBehaviour
         if (CanActive && hand.GetStandardInteractionButtonDown() || ((hand.controller != null) && hand.controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)))
         {
             sendActive();
+        }
+
+        if (CanActive && hand.GetStandardInteractionButtonUp() || ((hand.controller != null) && hand.controller.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)))
+        {
+            SendMessage("Deactivate");
         }
     }
 }

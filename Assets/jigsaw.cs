@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class jigsaw : MonoBehaviour
 {
+    public enum Blank_Type
+    {
+        SINGLE_BLANK, MULTI_BLANK
+    }
+    public Blank_Type blank_Type;
     public GameObject[] go;
     public Transform[,] matrix = new Transform[Constants.MaxColumns, Constants.MaxRows];
     public Transform[,] ans = new Transform[Constants.MaxColumns, Constants.MaxRows];
+    public Transform moveFrom;
     public Vector3 sideSize;
     public bool Won;
     void Start()
     {
+        sideSize.x *= transform.localScale.x;
+        sideSize.y *= transform.localScale.y;
+        sideSize.z *= transform.localScale.z;
+
         for (int i = 0; i < Constants.MaxColumns; i++)
         {
             for (int j = 0; j < Constants.MaxRows; j++)
@@ -87,7 +97,7 @@ public class jigsaw : MonoBehaviour
         if (i >= 0 && j >= 0 && i < Constants.MaxRows && j < Constants.MaxColumns) return true;
         return false;
     }
-    public void tryMove(Transform curr)
+    public void tryMoveSingle(Transform curr)
     {
         int currI = 0, currJ = 0;
 
@@ -114,6 +124,37 @@ public class jigsaw : MonoBehaviour
                 Swap(currI, currJ, _x, _y);
             }
         }
+    }
+
+    public void tryMoveMulti(Transform moveTo)
+    {
+        int currI = 0, currJ = 0;
+
+        for (int i = 0; i < Constants.MaxColumns; i++)
+        {
+            for (int j = 0; j < Constants.MaxRows; j++)
+            {
+                if (matrix[i, j] == moveFrom)
+                {
+                    currI = i;
+                    currJ = j;
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < 4; i++)
+        {
+            int _x, _y;
+            _x = currI + dx[i];
+            _y = currJ + dy[i];
+            if (valid(_x, _y) && matrix[_x, _y].name == "blank" && matrix[_x, _y] == moveTo)
+            {
+                Swap(currI, currJ, _x, _y);
+            }
+        }
+
+        moveFrom = null;
     }
     void Update()
     {

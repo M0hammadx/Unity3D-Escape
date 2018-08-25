@@ -13,7 +13,24 @@ public class pieceTryMove : MonoBehaviour
 
     void Activate()
     {
+
         //Debug.Log("click");
-        jigsawScript.tryMove(transform);
+        if (jigsawScript.blank_Type == jigsaw.Blank_Type.SINGLE_BLANK)
+            jigsawScript.tryMoveSingle(transform);
+        else if (jigsawScript.blank_Type == jigsaw.Blank_Type.MULTI_BLANK)
+        {
+            if (!jigsawScript.moveFrom)
+            {
+                jigsawScript.moveFrom = transform;
+            }
+        }
+    }
+    void Deactivate()
+    {
+        if (jigsawScript.blank_Type == jigsaw.Blank_Type.MULTI_BLANK)
+        {
+            jigsawScript.tryMoveMulti(transform);
+        }
+
     }
 }
