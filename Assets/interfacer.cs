@@ -35,18 +35,32 @@ public class interfacer : MonoBehaviour
         // Debug.Log("sent");
         gameObject.SendMessage("Activate");
     }
+    bool canPress = true;
     private void HandHoverUpdate(Hand hand)
     {
-
-        if (CanActive && hand.GetStandardInteractionButtonDown() || ((hand.controller != null) && hand.controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)))
+        if (CanActive && hand.GetStandardInteractionButtonDown())
         {
             sendActive();
+            Debug.Log("AWDA");
         }
-
-        if (CanActive && hand.GetStandardInteractionButtonUp() || ((hand.controller != null) && hand.controller.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)))
+        if (CanActive && hand.GetStandardInteractionButtonUp())
         {
             SendMessage("Deactivate");
         }
+
+        //if (CanActive && hand.GetStandardInteractionButtonDown() || (canPress && (hand.controller != null) && hand.controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)))
+        //{
+        //    sendActive();
+        //    canPress = false;
+        //}
+        //if ((hand.controller != null) && !hand.controller.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
+        //{
+        //    canPress = true;
+        //}
+        //if (CanActive && hand.GetStandardInteractionButtonUp() || ((hand.controller != null) && hand.controller.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)))
+        //{
+        //    SendMessage("Deactivate");
+        //}
     }
 }
 

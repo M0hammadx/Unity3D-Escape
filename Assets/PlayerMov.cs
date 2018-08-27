@@ -12,7 +12,7 @@ public class PlayerMov : MonoBehaviour
     void Start()
     {
         hand = GetComponent<Hand>();
-       // rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -20,7 +20,7 @@ public class PlayerMov : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) || ((hand != null) && (hand.controller != null) && hand.controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_Grip)))
         {
-            rb.velocity = transform.forward * movespeed;
+            // rb.velocity = transform.forward * movespeed;
             // transform.Translate(Vector3.forward * movespeed);
         }
         else

@@ -17,15 +17,15 @@ public class jigsaw : MonoBehaviour
     public bool Won;
     void Start()
     {
-        sideSize.x *= transform.localScale.x;
-        sideSize.y *= transform.localScale.y;
-        sideSize.z *= transform.localScale.z;
+        //sideSize.x *= transform.localScale.x;
+        //sideSize.y *= transform.localScale.y;
+        //sideSize.z *= transform.localScale.z;
 
         for (int i = 0; i < Constants.MaxColumns; i++)
         {
             for (int j = 0; j < Constants.MaxRows; j++)
             {
-                go[i * Constants.MaxColumns + j].transform.position = new Vector3(j * sideSize.x, -i * sideSize.y, 0);
+                go[i * Constants.MaxColumns + j].transform.localPosition = new Vector3(j * sideSize.x, -i * sideSize.y, 0);
                 ans[i, j] = go[i * Constants.MaxColumns + j].transform;
                 matrix[i, j] = go[i * Constants.MaxColumns + j].transform;
 
@@ -128,6 +128,8 @@ public class jigsaw : MonoBehaviour
 
     public void tryMoveMulti(Transform moveTo)
     {
+        if (!moveFrom || moveFrom == moveTo) return;
+
         int currI = 0, currJ = 0;
 
         for (int i = 0; i < Constants.MaxColumns; i++)

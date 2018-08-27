@@ -19,10 +19,7 @@ public class pieceTryMove : MonoBehaviour
             jigsawScript.tryMoveSingle(transform);
         else if (jigsawScript.blank_Type == jigsaw.Blank_Type.MULTI_BLANK)
         {
-            if (!jigsawScript.moveFrom)
-            {
-                jigsawScript.moveFrom = transform;
-            }
+            jigsawScript.moveFrom = transform;
         }
     }
     void Deactivate()
