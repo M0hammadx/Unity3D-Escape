@@ -39,9 +39,9 @@ public class jigsaw : MonoBehaviour
 
             }
         }
-        //Shuffle();
+        Shuffle();
 
-        InvokeRepeating("chechWin", 2, 10);
+        InvokeRepeating("chechWin", 2, 1);
     }
 
     bool chechWin()
