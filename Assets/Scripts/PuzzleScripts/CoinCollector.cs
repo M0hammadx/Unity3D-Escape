@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CoinCollector : MonoBehaviour
 {
-    
+
     public AudioClip CoinSound = null;
-    private AudioSource mAudioSource = null;
+    public AudioSource mAudioSource = null;
     public int coins;
 
     void Start()
@@ -16,10 +16,6 @@ public class CoinCollector : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -31,7 +27,7 @@ public class CoinCollector : MonoBehaviour
                 mAudioSource.PlayOneShot(CoinSound);
             }
             coins++;
-            Destroy(other.gameObject);
+            DestroyImmediate(other.gameObject);
         }
     }
 }
