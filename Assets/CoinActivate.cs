@@ -18,6 +18,6 @@ public class CoinActivate : MonoBehaviour
             coinScript.mAudioSource.PlayOneShot(coinScript.CoinSound);
         }
         coinScript.coins++;
-        DestroyImmediate(gameObject);
+        Destroy(gameObject);
     }
 }

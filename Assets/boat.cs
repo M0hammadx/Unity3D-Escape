@@ -5,9 +5,15 @@ using UnityEngine;
 public class boat : MonoBehaviour
 {
     public GameObject player;
+    public GameObject convas;
 
     void Activate()
     {
+        if (convas)
+        {
+            convas.SetActive(false);
+        }
+
         player.transform.SetParent(transform, true);
         Destroy(GetComponent<interfacer>());
         transform.Find("SelectGUI").gameObject.SetActive(false);

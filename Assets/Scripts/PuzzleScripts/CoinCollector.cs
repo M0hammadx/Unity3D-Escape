@@ -16,7 +16,7 @@ public class CoinCollector : MonoBehaviour
 
     }
 
-
+    /*
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("in");
@@ -27,7 +27,7 @@ public class CoinCollector : MonoBehaviour
                 mAudioSource.PlayOneShot(CoinSound);
             }
             coins++;
-            DestroyImmediate(other.gameObject);
+            Destroy(other.gameObject);
         }
-    }
+    }*/
 }
