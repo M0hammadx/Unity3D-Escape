@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SelectGUI
   m_Shader: {fileID: 4800000, guid: b129d55e683778c4cb3e0bbb0e1d68db, type: 3}
