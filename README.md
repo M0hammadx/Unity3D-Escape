@@ -9,15 +9,15 @@
 
 ## Snapshots
 
-![Alt Text](<images/img (2).jpg>)
-![Alt Text](<images/img (3).jpg>)
-![Alt Text](<images/img (5).jpg>)
-![Alt Text](<images/img (10).jpg>)
-![Alt Text](<images/img (15).jpg>)
-![Alt Text](<images/img (17).jpg>)
-![Alt Text](<images/img (20).jpg>)
-![Alt Text](<images/img (21).jpg>)
-![Alt Text](<images/img (24).jpg>)
+![Alt Text](<Images/img (2).jpg>)
+![Alt Text](<Images/img (3).jpg>)
+![Alt Text](<Images/img (5).jpg>)
+![Alt Text](<Images/img (10).jpg>)
+![Alt Text](<Images/img (15).jpg>)
+![Alt Text](<Images/img (17).jpg>)
+![Alt Text](<Images/img (20).jpg>)
+![Alt Text](<Images/img (21).jpg>)
+![Alt Text](<Images/img (24).jpg>)
 
 ### For More Snapshots Check [Images](<images>)
 
