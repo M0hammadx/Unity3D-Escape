@@ -4,7 +4,7 @@
 # Gameplay
 
 ## Video
-[![Alt text](<images/img (1).jpg>)](https://youtu.be/sxVu3d4HMBA "Click to play")
+[![Alt text](<Images/img (1).jpg>)](https://youtu.be/sxVu3d4HMBA "Click to play")
 
 
 ## Snapshots
